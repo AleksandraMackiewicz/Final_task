@@ -1,0 +1,30 @@
+  <mat-toolbar>
+    <span><a routerLink=""> My Application</a></span>
+
+
+  <!-- <section> -->
+    <div class="example-button-row">
+
+      <ng-container *ngIf="isLoggedIn(); else loggedOutButtons">
+        <button mat-raised-button>Dashboard</button>
+        <button mat-raised-button>Profile</button>
+        <button mat-raised-button (click)="onClickedLogout()">Logout</button>
+      </ng-container>
+
+      <ng-template #loggedOutButtons>
+        <a routerLink="log-in"><button mat-raised-button >
+          Log In </button></a>
+          <a routerLink="register"><button mat-raised-button >
+            Register</button></a>
+      </ng-template>
+
+
+
+    </div>
+  <!-- </section> -->
+
+</mat-toolbar>
+
+
+
+

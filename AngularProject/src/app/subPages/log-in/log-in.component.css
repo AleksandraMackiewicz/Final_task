@@ -1,0 +1,32 @@
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(99, 99, 99);
+color:rgb(75, 75, 75);
+}
+.text-muted{
+  color:rgb(34, 34, 34)!important;
+}
+
+.pink {
+  background-color: #e91e63;
+  color: white;
+}
+.vh-100 {
+  width: 90%;
+}
+
+
+form {
+
+  /* background-color: rgb(0,69,102);*/
+  /* background-color: rgba(148, 212, 243, 0.9);  */
+  background-color: rgba(200,237,255);
+  padding: 10%;
+  border-radius: 0.5rem;
+}
+
+

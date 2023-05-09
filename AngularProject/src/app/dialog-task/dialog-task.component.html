@@ -1,0 +1,17 @@
+
+<mat-dialog-content>
+	<p>
+		{{message}}
+	</p>
+    <p>Enter the following details:</p>
+    <mat-form-field>
+      <input matInput placeholder="Name" [(ngModel)]="nameStr">
+    </mat-form-field>
+    <mat-form-field *ngIf="bShowDescField">
+      <input matInput placeholder="Desc" [(ngModel)]="titleStr">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+	<button mat-raised-button color="primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
+	<button mat-raised-button mat-dialog-close tabindex="-1">{{cancelButtonText}}</button>
+</mat-dialog-actions>

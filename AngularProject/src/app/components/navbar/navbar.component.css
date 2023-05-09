@@ -1,0 +1,24 @@
+.mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.example-button-row {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+
+}
+
+
+.mat-mdc-raised-button.mat-unthemed {
+  --mdc-protected-button-container-color: #0d6efd;
+  --mdc-protected-button-label-text-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+    text-decoration: none;
+}

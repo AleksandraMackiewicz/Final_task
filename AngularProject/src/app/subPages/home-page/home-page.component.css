@@ -1,0 +1,17 @@
+.text-start {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.card_person {
+  width: 25%;
+  height: 25%;
+  margin: 5%;
+  padding: 2%;
+  /* box-shadow: 60px -16px 5px rgb(226, 222, 222); */
+  box-shadow: 10px 5px 5px rgb(226, 222, 222);
+
+  background-color: rgb(205, 199, 199);
+}

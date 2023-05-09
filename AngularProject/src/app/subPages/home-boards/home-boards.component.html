@@ -1,0 +1,73 @@
+
+
+        <div class="board">
+
+    <div class="board_bar">
+<!-- Boards tab -->
+      <button mat-button class="board_tab" style="background-color: grey" [matMenuTriggerFor]="menu">View Boards</button>
+      <mat-menu #menu="matMenu">
+        <button *ngFor="let board of list" id="board._id" mat-menu-item (click)="onClickChangeBoard(board._id)"> {{board.title}}</button>
+      </mat-menu>
+      <br>
+      <button mat-button class="board_tab" style="background-color: grey" [matMenuTriggerFor]="menu2">Delete Boards</button>
+      <mat-menu #menu2="matMenu">
+        <button *ngFor="let board of list" id="board._id" mat-menu-item (click)="onClickDeleteBoard(board._id)"> {{board.title}}</button>
+      </mat-menu>
+
+      <br>
+<!-- Boards add --> <!--title owner user-->
+      <div class="boards_add" >
+        <button mat-raised-button (click)="showCreateBoard()">Add Boards</button>
+      </div>
+
+  </div>
+
+
+  <div class="column_title">
+    <h1 style="text-align: center;"> You are viewing board: {{ board.name }} with {{ board.columns.length }} columns</h1>
+  </div>
+  <!-- Column add -->
+    <div class="columns_add" *ngIf="!columnFormShown">
+      <button mat-raised-button (click)="showCreateColumn()">Add Column</button>
+    </div>
+
+    <div class="board_wrapper">
+
+      <div class="board_columns" cdkDropListGroup>
+        <div class="board_column" *ngFor="let column of board.columns">
+
+          <div class="column_title">
+            <button mat-raised-button (click)="editColumnTitle(column)" style="background-color: rgb(20, 20, 66)" >Column: {{ column.name }} (click to edit)</button>
+            <br>
+          </div>
+
+          <div class="tasks_container"
+          cdkDropList
+          [cdkDropListData]="column.tasksObjects"
+          (cdkDropListDropped)="drop($event)">
+          <div class="task" *ngFor="let item of column.tasksObjects" cdkDrag style="display: flex; align-items: flex-end;">
+            <div style="flex-grow: 1;">{{ item.title }}</div>
+            <button mat-raised-button (click)="onClickedEditTask(column.id, item)">Edit</button>
+            <button mat-raised-button (click)="onClickedDeleteTask(item)">Delete</button>
+          </div>
+
+        <!-- Task add -->
+            <div >
+              <br>
+              Add new task here:
+              <div class="add_task" style="float:bottom">
+                <input class="add_task_input" #taskInput name="task" required type="text" placeholder="Task..."/>
+                <button mat-raised-button (click)="addTask(column.id, taskInput.value)">Add</button>
+              </div>
+            </div>
+          </div>
+          <button style="float:right" mat-raised-button (click)="onClickedDeleteColumn(column.id)">Delete Column</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+

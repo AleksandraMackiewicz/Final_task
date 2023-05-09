@@ -1,0 +1,20 @@
+.vh-100 {
+  width: 90%;
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+background: rgb(99, 99, 99);
+color:rgb(75, 75, 75);
+}
+form {
+  background-color: rgb(200,237,255);
+  padding: 10%;
+  border-radius: 0.5rem;
+}
+.text-muted{
+  color:rgb(34, 34, 34)!important;
+}
